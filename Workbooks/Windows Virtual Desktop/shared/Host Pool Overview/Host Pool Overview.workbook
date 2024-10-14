@@ -187,9 +187,13 @@
             "version": "KqlParameterItem/1.0",
             "name": "hostpooltype",
             "type": 1,
-            "query": "{\"version\":\"ARMEndpoint/1.0\",\"data\":null,\"headers\":[],\"method\":\"GET\",\"path\":\"{HostPool}?api-version=2022-02-10-preview\",\"urlParams\":[],\"batchDisabled\":false,\"transformers\":[{\"type\":\"jsonpath\",\"settings\":{\"tablePath\":\"$.properties.hostPoolType\",\"columns\":[]}}]}",
+            "query": "resources\r\n| where type == \"microsoft.desktopvirtualization/hostpools\" and resourceGroup == \"{ResourceGroup}\"\r\n| project hostPoolType= properties.hostPoolType",
+            "crossComponentResources": [
+              "{HostPool}"
+            ],
             "isHiddenWhenLocked": true,
-            "queryType": 12
+            "queryType": 1,
+            "resourceType": "microsoft.resourcegraph/resources"
           }
         ],
         "style": "pills",

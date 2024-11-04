@@ -1290,7 +1290,7 @@
                               "typeSource": "default",
                               "gallerySource": "workbook",
                               "locationSource": "default",
-                              "workbookName": "UserRTTHistory-Workbook",
+                              "workbookName": "UserRTTHistory",
                               "viewerMode": false
                             }
                           }

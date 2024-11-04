@@ -991,14 +991,14 @@
                               }
                             ],
                             "armActionContext": {
-                              "path": "{HostPool}/sessionHosts/AVDPersonal-0?api-version=2024-04-03",
+                              "path": "{SelectedComputer}?api-version=2024-04-03",
                               "headers": [],
                               "params": [],
                               "body": "{\r\n  \"properties\": {\r\n    \"allowNewSession\": false\r\n  }\r\n}",
                               "responseType": "json",
                               "httpMethod": "PATCH",
                               "title": "Change Drain Mode",
-                              "description": "# You are about to update drain mode on this host. ",
+                              "description": "You are about to update drain mode on \r\n'{Computer}'. ",
                               "actionName": "Change drain mode",
                               "runLabel": "Confirm"
                             }
@@ -1010,9 +1010,23 @@
                         },
                         {
                           "columnMatch": "Sessions",
-                          "formatter": 0,
+                          "formatter": 1,
                           "formatOptions": {
-                            "aggregation": "Sum"
+                            "linkColumn": "Host Name",
+                            "linkTarget": "WorkbookTemplate",
+                            "linkIsContextBlade": true,
+                            "aggregation": "Sum",
+                            "workbookContext": {
+                              "componentIdSource": "workbook",
+                              "resourceIdsSource": "workbook",
+                              "templateIdSource": "static",
+                              "templateId": "/subscriptions/30694051-60e3-4b50-884a-769d7fdf3543/resourceGroups/Core_Infrastructure/providers/microsoft.insights/workbooks/398aa4f2-72fc-47a8-8459-41eb19fab018",
+                              "typeSource": "workbook",
+                              "gallerySource": "workbook",
+                              "locationSource": "default",
+                              "workbookName": "UserRTTHistory",
+                              "viewerMode": true
+                            }
                           }
                         },
                         {

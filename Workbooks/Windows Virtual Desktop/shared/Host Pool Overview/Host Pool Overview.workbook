@@ -187,7 +187,7 @@
             "version": "KqlParameterItem/1.0",
             "name": "hostpooltype",
             "type": 1,
-            "query": "resources\r\n| where type == \"microsoft.desktopvirtualization/hostpools\" and resourceGroup == \"{ResourceGroup}\"\r\n| project hostPoolType= properties.hostPoolType",
+            "query": "resources\r\n| where type == \"microsoft.desktopvirtualization/hostpools\" and resourceGroup == \"{ResourceGroup}\"  and id == \"{HostPool}\"\r\n| project hostPoolType= properties.hostPoolType",
             "crossComponentResources": [
               "{HostPool}"
             ],
